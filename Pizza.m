@@ -11,6 +11,7 @@
 @interface Pizza()
 
 @property (nonatomic) PizzaSize size;
+
 @property (nonatomic) NSArray *toppings;
 
 @end
@@ -37,7 +38,7 @@
   return self;
 }
 
-+ (PizzaSize) sizeConvert : (NSString *) sizeString{
++ (PizzaSize) sizeConvertToEnum : (NSString *) sizeString{
   if ([sizeString isEqualToString: @"small"]) {
     return 1;
   } else if ([sizeString isEqualToString: @"medium"]) {
@@ -46,6 +47,18 @@
     return 3;
   } else {
     return 1;
+  }
+}
+
++ (NSString *) enumConvertToSize : (PizzaSize)size {
+  if (size == 1) {
+    return @"small";
+  } else if (size == 2) {
+    return @"medium";
+  } else if (size == 3) {
+    return @"large";
+  } else {
+    return @"small";
   }
 }
 

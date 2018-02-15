@@ -36,13 +36,17 @@ int main(int argc, const char * argv[])
             NSArray *commandWords = [inputString componentsSeparatedByString:@" "];
           NSString *sizeString = [commandWords objectAtIndex:0];
           NSMutableArray *toppingsMutableArray = [[NSMutableArray alloc] init];
-          [toppingsMutableArray arrayByAddingObjectsFromArray:commandWords];
+          [toppingsMutableArray addObjectsFromArray:commandWords];
           [toppingsMutableArray removeObjectAtIndex:0];
           
-          PizzaSize sizeEnum = [Pizza sizeConvert:sizeString];
+          PizzaSize sizeEnum = [Pizza sizeConvertToEnum:sizeString];
           
             // And then send some message to the kitchen...
           Pizza *pizza = [restaurantKitchen makePizzaWithSize:sizeEnum toppings:toppingsMutableArray];
+          
+          NSString *readyPizzaSize = [Pizza enumConvertToSize:pizza.size];
+          NSString *readyToppings = [toppingsMutableArray componentsJoinedByString:@" "];
+          NSLog(@"%@ %@ pizza is ready!", readyPizzaSize, readyToppings);
         }
 
     }

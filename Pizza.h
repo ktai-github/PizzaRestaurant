@@ -16,7 +16,9 @@ typedef enum {small = 1, medium = 2, large = 3} PizzaSize;
 
 - (NSArray *) toppings;
 
-+ (PizzaSize) sizeConvert : (NSString *) sizeString;
++ (PizzaSize) sizeConvertToEnum : (NSString *) sizeString;
+
++ (NSString *) enumConvertToSize : (PizzaSize) size;
 
 - (instancetype)initWithSizeAndToppings : (PizzaSize) size topping : (NSArray *) toppingArray;
 
