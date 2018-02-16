@@ -11,7 +11,7 @@
 
 @class Kitchen;
 
-@protocol KitchenDelegate
+@protocol KitchenDelegate <NSObject>
 
 - (BOOL) kitchen : (Kitchen *) kitchen shouldMakePizzaOfSize: (PizzaSize) size andToppings: (NSArray *)toppings;
 - (BOOL) kitchenShouldUpgradeOrder : (Kitchen *) kitchen;
@@ -22,7 +22,9 @@
 
 @end
 
-@interface Kitchen : NSObject
+@interface Kitchen : NSObject 
+
+@property (weak, nonatomic) id <KitchenDelegate> kitchenDelegate;
 
 - (Pizza *)makePizzaWithSize:(PizzaSize)size toppings:(NSArray *)toppings;
 
