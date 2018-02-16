@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum {small = 1, medium = 2, large = 3} PizzaSize;
+typedef enum {small, medium, large} PizzaSize;
 
 @interface Pizza : NSObject
 
 - (PizzaSize) size;
 
-- (NSArray *) toppings;
++ (NSArray *) toppings : (NSArray *) toppingsArray;
 
 + (PizzaSize) sizeConvertToEnum : (NSString *) sizeString;
 

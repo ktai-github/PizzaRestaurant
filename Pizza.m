@@ -40,30 +40,32 @@
 
 + (PizzaSize) sizeConvertToEnum : (NSString *) sizeString{
   if ([sizeString isEqualToString: @"small"]) {
-    return 1;
+    return small;
   } else if ([sizeString isEqualToString: @"medium"]) {
-    return 2;
+    return medium;
   } else if ([sizeString isEqualToString: @"large"]) {
-    return 3;
+    return large;
   } else {
-    return 1;
+    return small;
   }
 }
 
 + (NSString *) enumConvertToSize : (PizzaSize)size {
-  if (size == 1) {
+  if (size == small) {
     return @"small";
-  } else if (size == 2) {
+  } else if (size == medium) {
     return @"medium";
-  } else if (size == 3) {
+  } else if (size == large) {
     return @"large";
   } else {
     return @"small";
   }
 }
 
-- (NSArray *) toppings{
-  NSArray *toppings = [[NSArray alloc] init];
-  return toppings;
++ (NSArray *) toppings : (NSArray *) toppingsArray{
+  NSMutableArray *toppingsMutableArray = [[NSMutableArray alloc] init];
+  [toppingsMutableArray addObjectsFromArray:toppingsArray];
+  [toppingsMutableArray removeObjectAtIndex:0];
+  return toppingsMutableArray;
 }
 @end
