@@ -114,9 +114,9 @@ int main(int argc, const char * argv[])
         
         processPizzaOrder(restaurantKitchen, shouldMakePizza, shouldUpgrade, &sizeEnum, toppingsArray);
         
-        if (restaurantKitchen.kitchenDelegate == noManager) {
-          break;
-        }
+//        if (restaurantKitchen.kitchenDelegate == noManager) {
+//          break;
+//        }
       }
       
     }
