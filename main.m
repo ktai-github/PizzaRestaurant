@@ -114,6 +114,9 @@ int main(int argc, const char * argv[])
         
         processPizzaOrder(restaurantKitchen, shouldMakePizza, shouldUpgrade, &sizeEnum, toppingsArray);
         
+        //need this in order for manager is none to loop around and ask for size and toppings again
+        fpurge(stdin);
+        
 //        if (restaurantKitchen.kitchenDelegate == noManager) {
 //          break;
 //        }
