@@ -31,7 +31,7 @@ static void separateSizeAndToppingsFromInput(NSString *inputString, PizzaSize *s
 }
 
 static NSString * userInputIfManagerNice() {
-  NSLog(@"Is the manager nice? Enter 'yes', 'no', or 'none'\n (workers are lazy, only one pizza one time can be made when 'none' is entered for manager)>");
+  NSLog(@"Is the manager nice? Enter 'yes', 'no', or 'none'\n >");
   char mgr[5];
   fgets (mgr, 5, stdin);
   
