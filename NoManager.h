@@ -1,5 +1,5 @@
 //
-//  ManagerUpgradeNice.h
+//  NoManager.h
 //  PizzaRestaurant
 //
 //  Created by KevinT on 2018-02-16.
@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "Kitchen.h"
 
-@interface ManagerUpgradeNice : NSObject <KitchenDelegate>
+@interface NoManager : NSObject <KitchenDelegate>
 
 @end

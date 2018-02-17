@@ -9,5 +9,16 @@
 #import "ManagerUpgradeNice.h"
 
 @implementation ManagerUpgradeNice
+- (BOOL)kitchen:(Kitchen *)kitchen shouldMakePizzaOfSize:(PizzaSize)size andToppings:(NSArray *)toppings { 
+  return TRUE;
+}
+
+- (BOOL)kitchenShouldUpgradeOrder:(Kitchen *)kitchen { 
+  return TRUE;
+}
+
+- (void) kitchenDidMakePizza : (Pizza *) pizza {
+  NSLog(@"enjoy!");
+}
 
 @end
